@@ -1,10 +1,136 @@
 openapi: 3.0.3
 info:
-  title: OpenAPI schema for template walrus-template-template
+  title: OpenAPI schema for template .
 components:
   schemas:
     variables:
       type: object
+      required:
+      - ssh_public_key
+      properties:
+        instance_hostname:
+          title: Instance Hostname
+          type: string
+          description: Hostname for the Civo compute instance
+          default: NYC1
+          x-walrus-ui:
+            group: Basic
+            order: 1
+        instance_size:
+          title: Instance Size
+          type: string
+          description: Civo compute instance size
+          default: g3.xsmall
+          x-walrus-ui:
+            group: Basic
+            order: 2
+        instance_notes:
+          title: Instance Notes
+          type: string
+          description: Civo compute instance notes
+          default: This is an example instance
+          x-walrus-ui:
+            group: Basic
+            order: 3
+        region:
+          title: Region
+          type: string
+          description: Civo region to deploy the cluster
+          default: NYC1
+          x-walrus-ui:
+            group: Basic
+            order: 4
+        ssh_public_key:
+          title: Ssh Public Key
+          type: string
+          description: The public SSH key to be used for Civo instance
+          format: password
+          writeOnly: true
+          x-walrus-ui:
+            group: Basic
+            order: 5
+        disk_image_name:
+          title: Disk Image Name
+          type: string
+          description: The name of the disk image to filter by, e.g. debian-10, ubuntu-22
+          default: ubuntu-22
+          x-walrus-ui:
+            group: Basic
+            order: 6
+        instance_tags:
+          title: Instance Tags
+          type: array
+          description: List for instance tags
+          items:
+            type: string
+          x-walrus-ui:
+            colSpan: 12
+            group: Basic
+            order: 7
+        script:
+          title: Script
+          type: string
+          description: Script for the Compute Instance
+          x-walrus-ui:
+            group: Basic
+            order: 8
+        network_cidr_v4:
+          title: Network Cidr V4
+          type: string
+          description: CIDR block for the network
+          default: 192.168.0.0/24
+          x-walrus-ui:
+            group: Basic
+            order: 9
+        network_nameservers_v4:
+          title: Network Nameservers V4
+          type: array
+          description: List of nameservers for the network
+          default:
+          - 8.8.8.8
+          - 1.1.1.1
+          items:
+            type: string
+          x-walrus-ui:
+            colSpan: 12
+            group: Basic
+            order: 10
+        external_network:
+          title: External Network
+          type: array
+          description: external CIDR for kubectl access
+          default:
+          - 0.0.0.0/0
+          items:
+            type: string
+          x-walrus-ui:
+            colSpan: 12
+            group: Basic
+            order: 11
+        default_cidr:
+          title: Default Cidr
+          type: array
+          description: default CIDR 0.0.0.0/0
+          default:
+          - 0.0.0.0/0
+          items:
+            type: string
+          x-walrus-ui:
+            colSpan: 12
+            group: Basic
+            order: 12
+        local_cidr:
+          title: Local Cidr
+          type: array
+          description: Local CIDR for ingress firewall rules
+          default:
+          - 192.168.0.0/24
+          items:
+            type: string
+          x-walrus-ui:
+            colSpan: 12
+            group: Basic
+            order: 13
       x-walrus-ui:
         groupOrder:
         - Basic
