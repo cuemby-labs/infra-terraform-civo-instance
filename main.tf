@@ -114,7 +114,7 @@ resource "civo_instance" "example" {
     firewall_id = civo_firewall.example.id
     network_id  = civo_network.example.id
     size        = var.instance_size
-    disk_image  = data.civo_disk_image.debian.os[0].id
+    disk_image  = data.civo_disk_image.os.diskimages[0].id
     script      = var.script
 }
 
