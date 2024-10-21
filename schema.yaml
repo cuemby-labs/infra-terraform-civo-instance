@@ -49,14 +49,25 @@ components:
           x-walrus-ui:
             group: Basic
             order: 5
+            textarea: true
         disk_image_name:
           title: Disk Image Name
           type: string
-          description: The name of the disk image to filter by, e.g. debian-10, ubuntu-22
-          default: ubuntu-22
+          description: The name of the disk image to filter by, e.g. debian-11, ubuntu-jammy, run 'civo diskimage ls' to get the list
+          default: ubuntu-10
+          enum:
+          - debian-9
+          - ubuntu-focal
+          - ubuntu-jammy
+          - debian-11
+          - rocky-9-1
+          - talos-v1.2.8
+          - debian-10
+          - talos-v1.5.0
           x-walrus-ui:
             group: Basic
             order: 6
+            allowCustomInput: true
         instance_tags:
           title: Instance Tags
           type: array
@@ -74,6 +85,7 @@ components:
           x-walrus-ui:
             group: Basic
             order: 8
+            textarea: true
         network_cidr_v4:
           title: Network Cidr V4
           type: string
