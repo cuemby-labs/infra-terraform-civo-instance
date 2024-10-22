@@ -33,9 +33,9 @@ variable "ssh_public_key" {
 }
 
 variable "disk_image_name" {
-  description = "The name of the disk image to filter by, e.g. debian-10, ubuntu-22"
+  description = "The name of the disk image to filter by, e.g. debian-11, ubuntu-jammy, run 'civo diskimage ls' to get the list"
   type        = string
-  default     = "ubuntu-22"
+  default     = "debian-11"
 }
 
 variable "instance_tags" {

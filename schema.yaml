@@ -21,6 +21,23 @@ components:
           type: string
           description: Civo compute instance size
           default: g3.xsmall
+          enum:
+          - g3.xsmall
+          - g3.small
+          - g3.medium
+          - g3.large
+          - g3.xlarge
+          - g3.2xlarge
+          - g4s.xsmall
+          - g4s.small
+          - g4s.medium
+          - g4s.large
+          - g4s.xlarge
+          - g4s.2xlarge
+          - an.g1.l40s.x1
+          - an.g1.l40s.x2
+          - an.g1.l40s.x4
+          - an.g1.l40s.x8
           x-walrus-ui:
             group: Basic
             order: 2
@@ -37,15 +54,21 @@ components:
           type: string
           description: Civo region to deploy the cluster
           default: NYC1
+          enum:
+          - NYC1
+          - PHX1
+          - FRA1
+          - LON1
           x-walrus-ui:
             group: Basic
             order: 4
         ssh_public_key:
-          title: Ssh Public Key
+          title: SSH Public Key
           type: string
           description: The public SSH key to be used for Civo instance
           format: password
           writeOnly: true
+          textarea: true
           x-walrus-ui:
             group: Basic
             order: 5
@@ -54,7 +77,7 @@ components:
           title: Disk Image Name
           type: string
           description: The name of the disk image to filter by, e.g. debian-11, ubuntu-jammy, run 'civo diskimage ls' to get the list
-          default: ubuntu-10
+          default: debian-11
           enum:
           - debian-9
           - ubuntu-focal
@@ -64,6 +87,7 @@ components:
           - talos-v1.2.8
           - debian-10
           - talos-v1.5.0
+          allowCustomInput: true
           x-walrus-ui:
             group: Basic
             order: 6
