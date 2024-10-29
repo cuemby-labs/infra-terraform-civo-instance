@@ -76,7 +76,7 @@ No modules.
 | <a name="input_instance_notes"></a> [instance_notes](#input\_instance_notes) | Civo compute instance notes. | `string` | `"This is an example instance"` | no |
 | <a name="input_region"></a> [region](#input\_region) | Civo region to deploy the cluster. | `string` | `"NYC1"` | no |
 | <a name="input_ssh_public_key"></a> [ssh_public_key](#input\_ssh_public_key) | The public SSH key to be used for Civo instance. | `string` | n/a | yes |
-| <a name="input_disk_image_name"></a> [disk_image_name](#input\_disk_image_name) | The name of the disk image to filter by (e.g., debian-10, ubuntu-22). | `string` | `"ubuntu-22"` | no |
+| <a name="input_disk_image_name"></a> [disk_image_name](#input\_disk_image_name) | The name of the disk image to filter by, e.g. debian-11, ubuntu-jammy, run 'civo diskimage ls' to get the list. | `string` | `"ubuntu-22"` | no |
 | <a name="input_instance_tags"></a> [instance_tags](#input\_instance_tags) | List for instance tags. | `list(string)` | `null` | no |
 | <a name="input_script"></a> [script](#input\_script) | Script for the Compute Instance. | `string` | `null` | no |
 | <a name="input_network_cidr_v4"></a> [network_cidr_v4](#input\_network_cidr_v4) | CIDR block for the network. | `string` | `"192.168.0.0/24"` | no |

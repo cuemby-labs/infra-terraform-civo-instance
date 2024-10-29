@@ -1,6 +1,6 @@
 openapi: 3.0.3
 info:
-  title: OpenAPI schema for template .
+  title: OpenAPI schema for Compute Instance template on CIVO provider.
 components:
   schemas:
     variables:
@@ -12,7 +12,6 @@ components:
           title: Instance Hostname
           type: string
           description: Hostname for the Civo compute instance
-          default: NYC1
           x-walrus-ui:
             group: Basic
             order: 1

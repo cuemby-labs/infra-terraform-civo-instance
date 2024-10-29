@@ -5,7 +5,6 @@
 variable "instance_hostname" {
   description = "Hostname for the Civo compute instance"
   type        = string
-  default     = "NYC1"
 }
 
 variable "instance_size" {
